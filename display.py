@@ -1,10 +1,11 @@
 import websockets
 import asyncio
 
-print("Hello World")
+address = "ws://atom-radpi-01.local"
+PORT = 7890
 
 async def listen():
-    url = "ws://localhost:7890"
+    url = "ws://"+"adress"+":"+str(PORT)
 
     async with websockets.connect(url) as ws:
         await ws.send('Hello Serever')
