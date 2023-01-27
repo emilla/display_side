@@ -10,9 +10,9 @@ async def listen():
     print(url)
 
     async with websockets.connect(url) as ws:
-        await ws.send('Hello Serever')
         while True:
+            await ws.send(input("Send message to server "))
             msg = await ws.recv()
-            print(msg)
+            print("Recieved from client: "+ msg)
 
 asyncio.get_event_loop().run_until_complete(listen())
