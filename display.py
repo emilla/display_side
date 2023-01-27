@@ -6,7 +6,7 @@ import asyncio
 # The main function that will handle connection and communication 
 # with the server
 async def listen():
-    url = "atom-radpi-01.local:7890"
+    url = "ws://atom-radpi-01.local:7890"
     # Connect to the server
     async with websockets.connect(url) as ws:
         # Send a greeting message
