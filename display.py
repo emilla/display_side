@@ -14,7 +14,8 @@ async def listen():
         # Stay alive forever, listening to incoming msgs
         while True:
             msg = await ws.recv()
-            print(input())
+            print(msg)
+            await ws.send(input("Send to server: ")) 
 
 # Start the connection
 asyncio.get_event_loop().run_until_complete(listen())
