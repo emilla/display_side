@@ -5,7 +5,9 @@ address = "ws://atom-radpi-01.local"
 PORT = 7890
 
 async def listen():
-    url = "ws://"+address+":"+str(PORT)
+    url = address+":"+str(PORT)
+
+    print(url)
 
     async with websockets.connect(url) as ws:
         await ws.send('Hello Serever')
