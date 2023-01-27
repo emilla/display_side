@@ -1,18 +1,20 @@
+
+# Importing the relevant libraries
 import websockets
 import asyncio
 
-address = "ws://atom-radpi-01.local"
-PORT = 7890
-
+# The main function that will handle connection and communication 
+# with the server
 async def listen():
-    url = address+":"+str(PORT)
-
-    print(url)
-
+    url = "atom-radpi-01.local:7890"
+    # Connect to the server
     async with websockets.connect(url) as ws:
+        # Send a greeting message
+        await ws.send("Hello Server!")
+        # Stay alive forever, listening to incoming msgs
         while True:
-            await ws.send(input("Send message to server "))
             msg = await ws.recv()
-            print("Recieved from client: "+ msg)
+            print(input())
 
+# Start the connection
 asyncio.get_event_loop().run_until_complete(listen())
