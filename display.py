@@ -10,7 +10,7 @@ async def listen():
     # Connect to the server
     async with websockets.connect(url) as ws:
         # Send a greeting message
-        await ws.send("{'request': 'distance'}")
+        await ws.send('{"request": "distance"}')
         # Stay alive forever, listening to incoming msgs
         #while True:
         msg = await ws.recv()
