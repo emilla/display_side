@@ -62,6 +62,9 @@ icon_font= ImageFont.truetype('lineawesome-webfont.ttf', 18)
 
 def draw_display(message):
     message = json.loads(message)
+    
+    named_tuple = time.localtime() # get struct_time
+    time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple)
 
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
@@ -77,7 +80,7 @@ def draw_display(message):
     draw.text((x+70, top+5), str(message["result"]),  font=font, fill=255)
 
 
-    draw.text((x+0, top+16), str(time.asctime()),  font=font, fill=255)
+    draw.text((x+0, top+16), str(time_string),  font=font, fill=255)
 
     
    # Display image.
