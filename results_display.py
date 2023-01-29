@@ -61,6 +61,7 @@ icon_font= ImageFont.truetype('lineawesome-webfont.ttf', 18)
 
 def draw_display(message):
     message = json.loads(message)
+    print(message)
 
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
@@ -71,9 +72,9 @@ def draw_display(message):
 
    # Text
     # Text temperature
-    draw.text((x+19, top+5), message["label"],  font=font, fill=255)
+    draw.text((x+19, top+5), str(message["label"]),  font=font, fill=255)
     # Text memory usage
-    draw.text((x+87, top+5), message["result"],  font=font, fill=255)
+    draw.text((x+87, top+5), str(message["result"]),  font=font, fill=255)
     
    # Display image.
     oled.image(image)
