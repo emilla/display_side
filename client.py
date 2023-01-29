@@ -2,6 +2,8 @@
 # Importing the relevant libraries
 import websockets
 import asyncio
+import results_display
+import json
 
 # The main function that will handle connection and communication 
 # with the server
@@ -15,6 +17,10 @@ async def listen():
         #while True:
         msg = await ws.recv()
         print(msg)
+        data = json.loads(msg)
+        data["label"] = "Distance"
+        results_display.draw_display(json.dumps(data))
+
         #await ws.send(input("Send to server: ")) 
 
 # Start the connection
