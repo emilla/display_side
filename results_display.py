@@ -68,7 +68,7 @@ def draw_display(message):
 
    # Icons
     # Icon temperature
-    draw.text((x, top+5),    chr(62609),  font=icon_font, fill=255)
+    #draw.text((x, top+5),    chr(62609),  font=icon_font, fill=255)
 
    # Text
     # Text temperature
