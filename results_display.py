@@ -77,7 +77,7 @@ def draw_display(message):
     draw.text((x+70, top+5), str(message["result"]),  font=font, fill=255)
 
 
-    draw.text((x+0, top+16), str(time.mktime()),  font=font, fill=255)
+    draw.text((x+0, top+16), str(time.asctime()),  font=font, fill=255)
 
     
    # Display image.
