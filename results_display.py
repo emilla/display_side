@@ -1,4 +1,5 @@
 import time
+import datetime
 import board
 import busio
 import digitalio
@@ -77,7 +78,7 @@ def draw_display(message):
     draw.text((x+87, top+5), str(message["result"]),  font=font, fill=255)
 
 
-    draw.text((x+19, top+16), str(time.asctime()),  font=font, fill=255)
+    draw.text((x+19, top+16), str(datetime.now().strftime("%H:%M:%S")),  font=font, fill=255)
 
     
    # Display image.
