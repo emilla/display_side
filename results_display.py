@@ -72,12 +72,12 @@ def draw_display(message):
 
    # Text
     # Text temperature
-    draw.text((x+19, top+5), str(message["label"]),  font=font, fill=255)
+    draw.text((x+0, top+5), str(message["label"]),  font=font, fill=255)
     # Text memory usage
-    draw.text((x+87, top+5), str(message["result"]),  font=font, fill=255)
+    draw.text((x+70, top+5), str(message["result"]),  font=font, fill=255)
 
 
-    draw.text((x+19, top+16), str(time.mktime()),  font=font, fill=255)
+    draw.text((x+0, top+16), str(time.mktime()),  font=font, fill=255)
 
     
    # Display image.
