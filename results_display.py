@@ -62,7 +62,6 @@ icon_font= ImageFont.truetype('lineawesome-webfont.ttf', 18)
 
 def draw_display(message):
     message = json.loads(message)
-    print(message)
 
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
