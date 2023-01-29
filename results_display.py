@@ -73,7 +73,7 @@ def draw_display(message):
     # Text temperature
     draw.text((x+19, top+5), message["label"],  font=font, fill=255)
     # Text memory usage
-    draw.text((x+87, top+5), message["data"],  font=font, fill=255)
+    draw.text((x+87, top+5), message["result"],  font=font, fill=255)
     
    # Display image.
     oled.image(image)
