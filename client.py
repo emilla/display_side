@@ -15,18 +15,18 @@ async def listen():
     url = "ws://atom-radpi-01.local:7890"
     # Connect to the server
     async with websockets.connect(url) as ws:
-        # Send request for data
+
+        # # Stay alive forever, waiting for button trigger to send a new request to server
         while True:
             button.wait_for_press()
+            # Send request for data
             await ws.send('{"request": "distance"}')
-            # Stay alive forever, listening to incoming msgs
             # while True:
             msg = await ws.recv()
             print(msg)
             data = json.loads(msg)
             data["label"] = "Distance"
             results_display.draw_display(json.dumps(data))
-
 
 # Start the connection
 asyncio.get_event_loop().run_until_complete(listen())
