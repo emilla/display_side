@@ -16,17 +16,16 @@ async def listen():
     # Connect to the server
     async with websockets.connect(url) as ws:
         # Send request for data
-        button.wait_for_press()
-        await ws.send('{"request": "distance"}')
-        # Stay alive forever, listening to incoming msgs
-        # while True:
-        msg = await ws.recv()
-        print(msg)
-        data = json.loads(msg)
-        data["label"] = "Distance"
-        results_display.draw_display(json.dumps(data))
-
-        # await ws.send(input("Send to server: "))
+        while True:
+            button.wait_for_press()
+            await ws.send('{"request": "distance"}')
+            # Stay alive forever, listening to incoming msgs
+            # while True:
+            msg = await ws.recv()
+            print(msg)
+            data = json.loads(msg)
+            data["label"] = "Distance"
+            results_display.draw_display(json.dumps(data))
 
 
 # Start the connection
